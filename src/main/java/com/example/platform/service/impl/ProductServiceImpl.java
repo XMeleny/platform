@@ -3,9 +3,11 @@ package com.example.platform.service.impl;
 import com.example.platform.entity.Product;
 import com.example.platform.repository.ProductRepository;
 import com.example.platform.service.ProductService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ProductServiceImpl implements ProductService {
 
     private ProductRepository productRepository;
