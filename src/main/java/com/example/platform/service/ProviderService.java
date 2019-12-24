@@ -7,6 +7,7 @@ public interface ProviderService {
     public List<Provider> getAllProvider();
 
     public Provider getProviderById(long id);
+    public Provider getProviderByName(String name);
 
     public void save(Provider provider);
     public void edit(Provider provider);

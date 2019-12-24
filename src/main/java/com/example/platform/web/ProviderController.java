@@ -17,6 +17,21 @@ public class ProviderController {
     @Resource
     ProviderService providerService;
 
+    @RequestMapping("/providerLoginPage")
+    public String providerLoginPage(){
+        return "provider/providerLoginPage";
+    }
+
+    @RequestMapping("/providerLogin")
+    public String providerLogin(String name,String pass){
+        Provider provider=providerService.getProviderByName(name);
+        if (provider.getPass().equals(Utils.md5(pass))){
+            System.out.println("login success");
+            return "provider/providerLoginPage";//todo forward to another page
+        }
+        return "provider/providerLoginPage";//todo forward to another page
+    }
+
     @RequestMapping("/providerRegisterPage")
     public String providerRegisterPage(){
         return "provider/providerRegisterPage";
@@ -26,6 +41,6 @@ public class ProviderController {
     public String providerRegister(String name,String pass){
         providerService.save(new Provider(name, Utils.md5(pass)));
         LOG.info("a provider register");
-        return "provider/providerRegisterPage";//todo return another page
+        return "provider/providerRegisterPage";//todo forward to another page
     }
 }
