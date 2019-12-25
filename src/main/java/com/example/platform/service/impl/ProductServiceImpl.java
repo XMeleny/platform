@@ -3,6 +3,7 @@ package com.example.platform.service.impl;
 import com.example.platform.entity.Product;
 import com.example.platform.repository.ProductRepository;
 import com.example.platform.service.ProductService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.List;
 @Service
 public class ProductServiceImpl implements ProductService {
 
+    @Autowired
     private ProductRepository productRepository;
 
     @Override

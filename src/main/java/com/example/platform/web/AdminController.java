@@ -28,7 +28,7 @@ public class AdminController {
         if (name.equals("admin")&&pass.equals("1to6")){
             LOG.info("admin login");
             model.addAttribute("providers",providerService.getAllProvider());
-            return "admin/listOfProvider";//todo forward to another page
+            return "admin/providerList";//todo forward to another page
         }
         //login fail
         return "admin/adminLoginPage";//todo forward to another page
