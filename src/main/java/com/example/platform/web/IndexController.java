@@ -12,6 +12,7 @@ public class IndexController {
 
     @RequestMapping("/")
     public String index(){
+        //todo forward to index page
 //        return "/index";
         return "provider/providerRegisterPage";
     }
